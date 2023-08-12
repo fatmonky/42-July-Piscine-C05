@@ -6,39 +6,50 @@
 /*   By: pteh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 10:59:21 by pteh              #+#    #+#             */
-/*   Updated: 2023/08/11 11:22:04 by pteh             ###   ########.fr       */
+/*   Updated: 2023/08/12 15:49:23 by pteh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 #include <limits.h>
 
-int	ft_find_next_prime(int nb)
+int	check_prime(int nb)
 {
-	int	sqrt;
-	int	upper_limit;
+	int	try;
 
-	sqrt = 2;
-	upper_limit = 46341;
-	if (nb < 0 || nb == 0 || nb == 1 || nb > INT_MAX)
+	try = 2;
+	if (nb == 0 || nb == 1 || nb % 2 == 0)
 		return (0);
-	if (nb > 2)
+	while (nb < 46340 && try * try <= nb)
 	{
-		while (nb < upper_limit && sqrt * sqrt <= upper_limit) //while we increase towards
-		{
-			sqrt++;
-			if (nb % sqrt != 0)
-				return (nb);
-		}
+		if (nb % try == 0)
+			return (0);
+		try++;
 	}
 	return (1);
 }
 
+int	ft_find_next_prime(int nb)
+{
+	int	try;
+	int	upper_limit;
+
+	try = nb;
+	upper_limit = (INT_MAX / 2) + 1;
+	while (try < upper_limit)
+	{
+		try++;
+		if (check_prime(try) == 1)
+			return (try);
+	}
+	return (nb);
+}
+/*
 int	main(void)
 {
-	printf("is 5 a prime?:%d\n", ft_find_next_prime(5));
-	printf("is 6 a prime?:%d\n", ft_find_next_prime(6));
-	printf("is 7 a prime?:%d\n", ft_find_next_prime(7));
-	printf("is 8 a prime?:%d\n", ft_find_next_prime(8));
-}
+	printf("What is the next prime after 5?: %d\n", ft_find_next_prime(5));
+	printf("What is the next prime after 6?: %d\n", ft_find_next_prime(6));
+	printf("What is the next prime after 12?: %d\n", ft_find_next_prime(12));
+	printf("What is the next prime after 15?: %d\n", ft_find_next_prime(15));
+	printf("What is the next prime after 524?: %d\n", ft_find_next_prime(524));
+}*/
