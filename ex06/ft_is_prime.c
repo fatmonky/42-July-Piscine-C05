@@ -6,7 +6,7 @@
 /*   By: pteh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 09:51:02 by pteh              #+#    #+#             */
-/*   Updated: 2023/08/12 15:45:24 by pteh             ###   ########.fr       */
+/*   Updated: 2023/08/12 15:53:03 by pteh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_is_prime(int nb)
 	}
 	return (1);
 }
-
+/*
 int	main(void)
 {
 	printf("is 5 a prime?:%d\n", ft_is_prime(5));
@@ -41,4 +41,4 @@ int	main(void)
 	printf("is 523 a prime?:%d\n", ft_is_prime(523));
 	printf("is 526 a prime?:%d\n", ft_is_prime(526));
 	printf("is 859 a prime?:%d\n", ft_is_prime(859));
-}
+}*/
