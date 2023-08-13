@@ -24,7 +24,7 @@ int	ft_is_prime(int nb)
 		return (1);
 	if (nb > 2)
 	{
-		while ((nb < 46340) && (sqrt * sqrt <= nb))
+		while ((nb < INT_MAX) && (sqrt * sqrt <= nb))
 		{
 			if ((nb % sqrt == 0) || (nb % 2 == 0))
 				return (0);
@@ -49,4 +49,5 @@ int	main(void)
 	printf("is 523 a prime?:%d\n", ft_is_prime(523));
 	printf("is 526 a prime?:%d\n", ft_is_prime(526));
 	printf("is 859 a prime?:%d\n", ft_is_prime(859));
+	printf("is INT_MAX a prime?:%d\n", ft_is_prime(INT_MAX));
 }*/

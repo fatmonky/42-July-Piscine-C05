@@ -17,12 +17,10 @@ int	ft_recursive_factorial(int nb)
 	int	mult;
 
 	mult = 0;
-	if (nb > 2)
+	if (nb > 1)
 		mult = nb * ft_recursive_factorial(nb - 1);
 	if (nb == 0 || nb == 1)
 		mult = 1;
-	if (nb == 2)
-		mult = 1 * 2;
 	return (mult);
 }
 /*
