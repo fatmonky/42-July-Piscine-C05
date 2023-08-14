@@ -6,7 +6,7 @@
 /*   By: pteh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 10:59:21 by pteh              #+#    #+#             */
-/*   Updated: 2023/08/13 14:26:36 by pteh             ###   ########.fr       */
+/*   Updated: 2023/08/14 13:39:07 by pteh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ int	check_prime(int nb)
 	int	try;
 
 	try = 2;
-	if (nb < 0 || nb == 0 || nb == 1 || nb > INT_MAX)
+	if (nb < 2)
 		return (0);
 	if (nb == 2)
 		return (1);
 	if (nb > 2)
 	{
-		while ((nb < INT_MAX) && (try * try <= nb))
+		while (try <= nb / 2)
 		{
-			if ((nb % try == 0) || (nb % 2 == 0))
+			if (nb % try == 0)
 				return (0);
 			try++;
 		}
@@ -39,31 +39,11 @@ int	ft_find_next_prime(int nb)
 	if (check_prime(nb) == 1)
 		return (nb);
 	else
-		return(ft_find_next_prime(nb + 1));
+		return (ft_find_next_prime(nb + 1));
 }
-/*
-   int	ft_find_next_prime(int nb)
-   {
-   int	try;
-   int	upper_limit;
 
-   try = nb;
-   upper_limit = (INT_MAX / 2) + 1;
-   if (check_prime(nb) == 1)
-   return (nb);
-   else
-   {
-   while (try < upper_limit)
-   {
-   try++;
-   if (check_prime(try) == 1)
-   return (try);
-   }
-   }
-   return (nb);
-   }*/
-/*
 //Learned from Chanika to introduce recursion.
+/*
 int	main(void)
 {
 	printf("What is the next prime after 0?: %d\n", ft_find_next_prime(0));

@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ex06-isprime.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pteh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 09:51:02 by pteh              #+#    #+#             */
-/*   Updated: 2023/08/14 18:44:08 by pteh             ###   ########.fr       */
+/*   Updated: 2023/08/14 13:26:39 by pteh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+//this is the refactored code using ChatGPT, but it seems to show that INT_MAX is not a prime, which it is.
+
+//another iteration is below.
 
 #include <stdio.h>
 #include <limits.h>
@@ -22,15 +25,17 @@ int	ft_is_prime(int nb)
 		return (0);
 	if (nb == 2)
 		return (1);
-	while (factor <= nb / factor)
+	if (nb % 2 == 0)
+		return (0);
+	while (factor <= nb / 2)
 	{
-		if (nb % factor == 0)
+		if (nb % factor == 0) 
 			return (0);
 		factor++;
 	}
 	return (1);
 }
-/*
+
    int	main(void)
    {
    printf("is -5 a prime?:%d\n", ft_is_prime(-5));
@@ -47,4 +52,4 @@ int	ft_is_prime(int nb)
    printf("is 526 a prime?:%d\n", ft_is_prime(526));
    printf("is 859 a prime?:%d\n", ft_is_prime(859));
    printf("is INT_MAX a prime?:%d\n", ft_is_prime(INT_MAX));
-   }*/
+   }
