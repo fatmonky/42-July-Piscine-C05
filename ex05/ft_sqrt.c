@@ -6,7 +6,7 @@
 /*   By: pteh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 09:15:55 by pteh              #+#    #+#             */
-/*   Updated: 2023/08/14 18:51:23 by pteh             ###   ########.fr       */
+/*   Updated: 2023/08/15 11:32:33 by pteh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int	ft_sqrt(int nb)
 	sqrt = 0;
 	while (sqrt <= nb)
 	{
-		if (sqrt >= nb / sqrt )
-			return ((sqrt * sqrt == nb) * sqrt);
 		sqrt++;
+		if (sqrt >= nb / sqrt)
+			return ((sqrt * sqrt == nb) * sqrt);
 	}
 	return (0);
 }
-
+/*
    int	main(void)
    {
    printf("root of 0:%d\n", ft_sqrt(0));
@@ -38,4 +38,5 @@ int	ft_sqrt(int nb)
    printf("root of 15:%d\n", ft_sqrt(15));
    printf("root of 16:%d\n", ft_sqrt(16));
    printf("root of INT_MAX:%d\n", ft_sqrt(INT_MAX));
-   }
+   printf("root of 2147395600:%d\n", ft_sqrt(2147395600));
+   }*/
